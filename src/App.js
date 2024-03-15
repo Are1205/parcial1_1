@@ -1,24 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import imagen from './assets/banner.png';
+import LoginForm from './components/login';
+import ListVehiculos from './components/listvehiculos';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <h1 className='titulo'>TuSegundazo.com</h1>
+    <img src={imagen} alt="imagen" />
+      <Routes>
+        <Route path="/" element={<LoginForm/>} />
+        <Route path="/vehiculos" element={<ListVehiculos/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
