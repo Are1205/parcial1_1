@@ -1,0 +1,32 @@
+.row-cstm{
+    display: flex;
+    flex-direction: row;
+}
+.col-table{
+    width: 65% !important;
+}
+.col-card{
+    width: 35% !important;
+}
+.table-header th {
+    background: #333a40 !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+.fila {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.table-header th,
+.fila td {
+    border: none;
+}
+
+.columna {
+    width: 190px;
+}
+.columna-id{
+    width: 60px;
+    font-weight: bold;
+}

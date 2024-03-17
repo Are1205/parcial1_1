@@ -1,0 +1,28 @@
+.custom-card {
+    margin-left: 1rem;
+    background-color: rgba(217, 217, 217, 0.5) !important;
+    border: 1px solid black !important;
+    border-radius: 0px !important;
+    width: 427px ;
+    height: 351px;
+}
+
+.custom-title {
+    text-align: center;
+    font-weight: bold !important;
+}
+
+.custom-img {
+    margin: 0 2.5rem;
+    width: 318px !important;
+    height: auto !important;
+    border-radius: 0px !important;
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.25);
+}
+
+.custom-txt{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    color: black;
+    line-height: 2px;
+}

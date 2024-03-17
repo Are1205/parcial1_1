@@ -1,0 +1,13 @@
+{
+    "marca": "Brand",
+    "linea": "Line",
+    "modelo": "Model",
+    "kilometraje": "Mileage",
+    "color": "Color",
+    "referencia": "Reference",
+    "user" : "Username",
+    "passwor": "Password",
+    "login": "Log In",
+    "login-btn": "Log In",
+    "cancel-btn": "Cancel"
+}

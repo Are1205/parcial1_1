@@ -1,0 +1,79 @@
+.titulo-login{
+    align-self: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+}
+
+.div-login{
+    width: 556px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.col-login {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén apilados verticalmente */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.login{
+    width: 556px;
+}
+
+.botones{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 3rem;
+}
+.cancelar,
+.ingresar{
+    border-radius: 0px !important;
+    width: 253px;
+    height: 53px;
+    font-family: 'Inter', sans-serif;
+    border: none !important;
+    font-weight: bold !important;
+    font-size: 1.4rem !important;
+}
+
+.ingresar{
+    background-color: #003B93 !important;
+    color: white;
+}
+
+.cancelar{
+    background-color: #E75D5D !important;
+    color: black !important;
+}
+
+.input-login{
+    width: 556px;
+    height: 58px;
+    border-radius: 0px !important;
+    background-color: #D9D9D9 !important;
+}
+
+.label-login{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: black;
+}
+
+.alerta{
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #CD3232 !important;
+}
+
+.input-error{
+ border: 1px #6A0B0B solid !important;
+}
+

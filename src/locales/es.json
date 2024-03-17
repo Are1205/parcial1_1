@@ -1,0 +1,13 @@
+{
+    "marca": "Marca",
+    "linea": "Línea",
+    "modelo": "Modelo",
+    "kilometraje": "Kilometraje",
+    "color": "Color",
+    "referencia": "Referencia",
+    "user" : "Nombre de usuario",
+    "passwor": "Contraseña",
+    "login": "Inicio de Sesión",
+    "login-btn": "Ingresar",
+    "cancel-btn": "Cancelar"
+}

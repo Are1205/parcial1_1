@@ -1,62 +1,68 @@
-import React from 'react';
-import { useState } from 'react';
-
-const vehiculos = [
-  {
-    id: 1,
-    marca: 'Chevrolet',
-    modelo: 'Onix',
-    año: 2020,
-    detalle: {color: 'rojo', placa: 'ABC123', kiloemtros: 10000}
-  },
-  {
-    id: 2,
-    marca: 'Ford',
-    modelo: 'Fiesta',
-    año: 2019,
-    detalle: {color: 'rojo', placa: 'ABC123', kiloemtros: 10000}
-  },
-  {
-    id: 3,
-    marca: 'Fiat',
-    modelo: 'Cronos',
-    año: 2021,
-    detalle: {color: 'rojo', placa: 'ABC123', kiloemtros: 10000}
-  }
-];
-
-
-
+import React, {useEffect, useState} from 'react';
+import './styles/vehiculos.css';
+import './styles/cardDetail.css';
+import { Card, Row, Table } from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
 
 export default function ListVehiculos() {
-const  [vehiculo, setVehiculo] = useState();
-const handle = (vehiculo) => {
-    setVehiculo(vehiculo.detalle);
-    }
+  const [vehiculosBack, setVehiculos] = useState([]);
+  const [vehiculo, setVehiculo] = useState();
+  const handleClick = (id) => {
+    fetch(`http://localhost:3001/cars/${id}`)
+      .then(response => response.json())
+      .then(data => setVehiculo(data));
+  };
+
+  useEffect(() => {
+    fetch('http://localhost:3001/cars')
+      .then(response => response.json())
+      .then(data => setVehiculos(data));
+  },[]);
+
+
+
   return (
-    <div>
-      <h2>Lista de Vehículos</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Año</th>
-          </tr>
-        </thead>
-        <tbody>
-          {vehiculos.map((vehiculo) => (
-            <tr key={vehiculo.id}>
-              <td>{vehiculo.id}</td>
-              <td>{vehiculo.marca}</td>
-              <td>{vehiculo.modelo}</td>
-              <td>{vehiculo.año}</td>
+    <Row className='row-cstm'>
+      <div className='col-table'>
+        <Table>
+          <thead className='table-header'>
+            <tr className='fila'>
+              <th>#</th>
+              <th><FormattedMessage id="marca"/></th>
+              <th><FormattedMessage id="linea"/></th>
+              <th><FormattedMessage id="modelo"/></th>
+              <th></th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {vehiculosBack.map((vehiculo) => (
+              <tr key={vehiculo.id} className='fila' onClick={()=>handleClick(vehiculo.id)}>
+                <td className='columna-id'>{vehiculo.id}</td>
+                <td className='columna'>{vehiculo.marca}</td>
+                <td className='columna'>{vehiculo.linea}</td>
+                <td className='columna'>{vehiculo.modelo}</td>
+                <td style={{width: '120px'}}></td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
+      <div className='col-card'>
+        {vehiculo &&
+          <Card className="custom-card">
+            <Card.Body>
+              <Card.Title className="custom-title">{vehiculo.marca} {vehiculo.linea}</Card.Title>
+              <Card.Img className="custom-img" variant="top" src={vehiculo.imagen} />
+              <Card.Text className="custom-txt">
+                <p><FormattedMessage id="kilometraje"/>: {vehiculo.kilometraje}</p>
+                <p><FormattedMessage id="color"/>: {vehiculo.color}</p>
+                <p><FormattedMessage id="referencia"/>: {vehiculo.referencia}</p>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        }
+      </div>
+    </Row>
 
   );
 }
