@@ -16,8 +16,8 @@
 }
 
 .custom-img {
-    margin: 0 auto; /* Esto centrará horizontalmente la imagen */
-    display: block; /* Asegura que la imagen se comporte como un bloque */
+    margin: 0 auto; 
+    display: block;
     width: auto !important;
     max-width: 318px !important;
     height: auto !important;
