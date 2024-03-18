@@ -3,6 +3,7 @@ import './styles/vehiculos.css';
 import './styles/cardDetail.css';
 import { Card, Row, Table } from 'react-bootstrap';
 import { FormattedMessage } from 'react-intl';
+import arrow from '../assets/arrow-right.svg';
 
 export default function ListVehiculos() {
   const [vehiculosBack, setVehiculos] = useState([]);
@@ -54,9 +55,9 @@ export default function ListVehiculos() {
               <Card.Title className="custom-title">{vehiculo.marca} {vehiculo.linea}</Card.Title>
               <Card.Img className="custom-img" variant="top" src={vehiculo.imagen} />
               <Card.Text className="custom-txt">
-                <p><FormattedMessage id="kilometraje"/>: {vehiculo.kilometraje}</p>
-                <p><FormattedMessage id="color"/>: {vehiculo.color}</p>
-                <p><FormattedMessage id="referencia"/>: {vehiculo.referencia}</p>
+                <p className="paragrahp" ><img src={arrow} alt="Arrow Right Icon"  style={{verticalAlign: 'middle;'}} /> <FormattedMessage id="kilometraje"/>: {vehiculo.kilometraje}</p>
+                <p className="paragrahp"><img src={arrow} alt="Arrow Right Icon" style={{verticalAlign: 'middle;'}} /> <FormattedMessage id="color"/>: {vehiculo.color}</p>
+                <p className="paragrahp"><img src={arrow} alt="Arrow Right Icon" style={{verticalAlign: 'middle;'}}/> <FormattedMessage id="referencia"/>: {vehiculo.referencia}</p>
               </Card.Text>
             </Card.Body>
           </Card>

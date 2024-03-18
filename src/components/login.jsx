@@ -40,6 +40,12 @@ const LoginForm = () => {
     }
   }
 
+  const handleCancel = (e) => {
+    e.preventDefault();
+    setUsername('');
+    setPassword('');
+    setError(false);
+  }
   return (
     <Col className = 'col-login'>
         <div className='div-login'>
@@ -74,7 +80,7 @@ const LoginForm = () => {
             <Button className='ingresar' type="submit">
                 <FormattedMessage id='login-btn' />
               </Button>
-              <Button className='cancelar' type="reset">
+              <Button className='cancelar' type="reset" onClick={handleCancel}>
                 <FormattedMessage id='cancel-btn' />
               </Button>
           </div>

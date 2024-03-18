@@ -3,9 +3,12 @@
     background-color: rgba(217, 217, 217, 0.5) !important;
     border: 1px solid black !important;
     border-radius: 0px !important;
-    width: 427px ;
-    height: 351px;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    overflow: hidden;
 }
+
 
 .custom-title {
     text-align: center;
@@ -13,8 +16,10 @@
 }
 
 .custom-img {
-    margin: 0 2.5rem;
-    width: 318px !important;
+    margin: 0 auto; /* Esto centrará horizontalmente la imagen */
+    display: block; /* Asegura que la imagen se comporte como un bloque */
+    width: auto !important;
+    max-width: 318px !important;
     height: auto !important;
     border-radius: 0px !important;
     box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.25);
@@ -24,5 +29,8 @@
     margin-top: 2rem;
     margin-left: 1rem;
     color: black;
-    line-height: 2px;
+}
+.paragrahp{
+    line-height: 1;
+    margin: 0;
 }
